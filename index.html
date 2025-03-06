@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker News</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            background: #003300;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .news {
+            margin-top: 20px;
+        }
+        article {
+            background: #002200;
+            padding: 15px;
+            margin: 10px auto;
+            width: 80%;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 15px #00ff00;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+        article h2 {
+            text-shadow: 0 0 10px #00ff00;
+        }
+        /* جعل عنوان الخبر قابل للنقر */
+        article h2 a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        article h2 a:hover {
+            text-decoration: underline;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #003300;
+        }
+        /* كلاس لتحريك الخبر للأعلى عند مرور الماوس */
+        .move-up {
+            transform: translateY(-50px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hacker News</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="#">الأخبار</a></li>
+                <li><a href="#">اختراقات</a></li>
+                <li><a href="#">تقارير</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="news">
+            <article>
+                <h2><a href="#">عنوان الخبر الأول</a></h2>
+                <p>ملخص عن الخبر الأول في عالم الهكرز.</p>
+                <a href="#">اقرأ المزيد</a>
+            </article>
+            <article>
+                <h2><a href="#">عنوان الخبر الثاني</a></h2>
+                <p>ملخص عن الخبر الثاني في عالم الهكرز.</p>
+                <a href="#">اقرأ المزيد</a>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Hacker News - جميع الحقوق محفوظة</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var articles = document.querySelectorAll('article');
+            articles.forEach(function(article) {
+                article.addEventListener('mouseenter', function() {
+                    article.classList.add('move-up');
+                });
+                article.addEventListener('mouseleave', function() {
+                    article.classList.remove('move-up');
+                });
+                article.addEventListener('click', function() {
+                    // إعادة التوجيه إلى موقع YouTube عند الضغط على أي مكان داخل الخبر
+                    window.location.href = '1.html';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
